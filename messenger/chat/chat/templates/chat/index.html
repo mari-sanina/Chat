@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            .hero.is-primary{
+                background-color:rgb(248, 132, 78) !important;
+                width: 750px  !important;
+                height: 150px !important;
+
+            }
+            article, aside, figure, footer, header, hgroup, section {
+                padding:0px 10px !important;
+            }
+            .button.is-info{
+                background-color:rgba(255, 99, 71, 1) !important;
+            }
+            
+            .button.is-info:hover{
+                background-color:rgba(255, 0, 0, 1) !important;
+            }
+            body {
+                color: #1a1a1a;
+                font-weight: 500 !important;
+                line-height: 2.5 !important;
+            }
+        </style>
+        <meta charset="utf-8"/>
+        <title>Чат</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    </head>
+
+    <body>
+        <section class="section">
+            <div class="container">
+                <div class="columns is-multiline">
+                    <div class="column is-6 is-offset-3 mb-6">
+                        <section class="hero is-primary">
+                            <div class="hero-body">
+                                <p class="title">
+                                    Микро-чат на Джанго
+                                </p>
+                                <p class="subtitle">
+                                    Создано специально для получения оценки по учебной практике
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="column is-4 is-offset-4">
+                        <div class="field">
+                            <label>Введите название чата, используя цифры или латиницу:</label>
+
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Название или номер чата" id="room-name-input">
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label>Ваш логин:</label>
+
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Логин" id="username-input">
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                <a class="button is-info" id="room-name-submit">Войти в чат</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            document.querySelector('#room-name-input').focus();
+
+            document.querySelector('#room-name-submit').onclick = function(e) {
+                var roomName = document.querySelector('#room-name-input').value;
+                var userName = document.querySelector('#username-input').value;
+
+                window.location.replace(roomName + '/?username=' + userName);
+            };
+
+        </script>
+    </body>
+</html>
